@@ -426,8 +426,12 @@ body[data-tema="oscuro"] .about__photo img {
 }
 
 @media (max-width: 780px) {
+  .about > .eyebrow {
+    margin-bottom: 28px;
+  }
   .about__grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .about__photo {
     order: -1;
