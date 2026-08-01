@@ -1,6 +1,11 @@
 (function () {
   "use strict";
 
+  /* La página debe arrancar siempre desde el Hero, aunque la URL lleve
+     un #ancla (enlace compartido) o el navegador intente restaurar el
+     scroll de una recarga anterior. */
+  window.scrollTo(0, 0);
+
   const body = document.body;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = !window.matchMedia('(hover: hover) and (pointer: fine)').matches;
