@@ -653,14 +653,38 @@ body[data-tema="oscuro"] .about__photo img {
   text-align: center;
 }
 
+.contact__link--icon-only {
+  justify-content: center;
+}
+
 .contact__icon {
   width: 28px;
   height: 28px;
   filter: var(--icon-shadow);
 }
 
+.contact__icon--lg {
+  width: 34px;
+  height: 34px;
+}
+
 .contact__icon--invert {
   filter: invert(1) var(--icon-shadow);
+}
+
+.contact__link[data-copy-email] {
+  position: relative;
+}
+
+.contact__link.is-copied::after {
+  content: '¡Copiado!';
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .contact__icon--dark {

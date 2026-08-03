@@ -207,13 +207,11 @@
     emailLink.addEventListener('click', (e) => {
       e.preventDefault();
       const email = emailLink.getAttribute('data-copy-email');
-      const valor = emailLink.querySelector('strong');
-      const textoOriginal = valor.textContent;
 
       navigator.clipboard.writeText(email).then(() => {
-        valor.textContent = '¡Copiado!';
+        emailLink.classList.add('is-copied');
         setTimeout(() => {
-          valor.textContent = textoOriginal;
+          emailLink.classList.remove('is-copied');
         }, 1800);
       }).catch(() => {
         window.location.href = emailLink.href;
