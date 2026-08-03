@@ -197,4 +197,28 @@
     });
   }
 
+  /* ============================================
+     9. COPIAR EMAIL AL PORTAPAPELES
+     ============================================ */
+
+  const emailLink = document.querySelector('[data-copy-email]');
+
+  if (emailLink && navigator.clipboard) {
+    emailLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = emailLink.getAttribute('data-copy-email');
+      const valor = emailLink.querySelector('strong');
+      const textoOriginal = valor.textContent;
+
+      navigator.clipboard.writeText(email).then(() => {
+        valor.textContent = '¡Copiado!';
+        setTimeout(() => {
+          valor.textContent = textoOriginal;
+        }, 1800);
+      }).catch(() => {
+        window.location.href = emailLink.href;
+      });
+    });
+  }
+
 })();

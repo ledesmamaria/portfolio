@@ -648,6 +648,33 @@ body[data-tema="oscuro"] .about__photo img {
   color: var(--text-muted);
 }
 
+.contact__link--icon {
+  align-items: center;
+  text-align: center;
+}
+
+.contact__icon {
+  width: 28px;
+  height: 28px;
+  filter: var(--icon-shadow);
+}
+
+.contact__icon--invert {
+  filter: invert(1) var(--icon-shadow);
+}
+
+.contact__icon--dark {
+  display: none;
+}
+
+body[data-tema="oscuro"] .contact__icon--light {
+  display: none;
+}
+
+body[data-tema="oscuro"] .contact__icon--dark {
+  display: inline-block;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
